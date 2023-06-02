@@ -1,13 +1,15 @@
+"use client";
+
 import { useSelector, useDispatch } from "react-redux";
 import { Button } from "@mui/material";
 
-import { counterReducer, selectCounter } from "stores/reducers/counter";
+import { counterSlice, selectCounter } from "stores/reducers/counter";
 
 function Counter() {
   const counter = useSelector(selectCounter());
   const dispatch = useDispatch();
   const increase = () => {
-    dispatch(counterReducer.actions.increase());
+    dispatch(counterSlice.actions.increase());
   };
 
   return (

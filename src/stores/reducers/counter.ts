@@ -10,7 +10,7 @@ export type CounterState = {
 
 const initialState: CounterState = { counter: 0 };
 
-export const counterReducer = createSlice({
+export const counterSlice = createSlice({
   name: REDUCER_NAME,
   initialState,
   reducers: {
@@ -23,6 +23,6 @@ export const counterReducer = createSlice({
   }
 });
 
-export default counterReducer.reducer;
+export const counterReducer = counterSlice.reducer;
 
 export const selectCounter = () => (state: AppState) => state.counter;

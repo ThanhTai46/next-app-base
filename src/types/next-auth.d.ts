@@ -5,19 +5,25 @@ declare module "next-auth" {
   // eslint-disable-next-line no-unused-vars
   interface Session {
     user: {
-      roles: string[];
+      id: number;
+      role: string;
+      rememberMe: boolean;
     } & DefaultSession["user"];
   }
 
   // eslint-disable-next-line no-unused-vars
   interface User extends DefaultUser {
-    roles: string[];
+    id: number;
+    role: string;
+    rememberMe: boolean;
   }
 }
 
 declare module "next-auth/jwt" {
   // eslint-disable-next-line no-unused-vars
   interface JWT extends DefaultJWT {
-    roles: string[];
+    userId: number;
+    role: string;
+    rememberMe: boolean;
   }
 }

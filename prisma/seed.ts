@@ -2,22 +2,7 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 async function main() {
-  // Seed roles
-  const user = await prisma.role.upsert({
-    where: { role: "user" },
-    update: {},
-    create: {
-      role: "user",
-    },
-  });
-
-  const admin = await prisma.role.upsert({
-    where: { role: "admin" },
-    update: {},
-    create: {
-      role: "admin",
-    },
-  });
+  // Seed data
 }
 
 main()

@@ -1,5 +1,7 @@
 import { PrismaClient } from "@prisma/client";
 
+import { isProduction } from "utils/common";
+
 declare global {
   // eslint-disable-next-line no-unused-vars
   var prisma: PrismaClient | undefined;
@@ -7,7 +9,7 @@ declare global {
 
 let prisma: PrismaClient;
 
-if (process.env.NODE_ENV === "production") {
+if (isProduction()) {
   prisma = new PrismaClient();
 } else {
   if (!global.prisma) {

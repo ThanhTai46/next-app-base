@@ -15,7 +15,7 @@ export const serverConfig = {
         pass: process.env.EMAIL_PASSWORD,
       },
       pool: true,
-      maxConnections: 100,
+      maxConnections: 5,
     },
   },
   external: {

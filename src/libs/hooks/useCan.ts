@@ -1,13 +1,13 @@
-import { useSession } from "next-auth/client";
+import { useSession } from "next-auth/react";
 
-import { validateUserPermissions } from "utils/permission";
+import { validateUserPermissions } from "utils/client/permission";
 
 type UseCanParams = {
   roles?: string[];
 };
 
 export function useCan({ roles }: UseCanParams): boolean {
-  const [session] = useSession();
+  const { data: session } = useSession();
 
   if (!session) {
     return false;

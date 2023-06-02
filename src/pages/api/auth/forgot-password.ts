@@ -7,9 +7,9 @@ import onError from "libs/middleware/onError";
 import onNoMatch from "libs/middleware/onNoMatch";
 import withValidation from "libs/middleware/withValidation";
 import { forgotPasswordSchema } from "libs/validation/schemas";
-import emailService from "services/email.service";
-import { getUserByEmail } from "utils/auth";
+import emailService from "services/server/email.service";
 import { IResponse } from "models/Response";
+import { UserRepo } from "repository/user";
 
 const validate = withValidation({
   schema: forgotPasswordSchema,
@@ -20,7 +20,7 @@ const handler = nc({ onError, onNoMatch });
 
 handler.post(async (req: NextApiRequest, res: NextApiResponse<IResponse>) => {
   const { email } = req.body;
-  const user = await getUserByEmail(email);
+  const user = await UserRepo.getUserByEmail(email);
 
   if (!user) {
     return res.status(400).json({ error: ERROR_MESSAGES.EMAIL_NOT_FOUND });

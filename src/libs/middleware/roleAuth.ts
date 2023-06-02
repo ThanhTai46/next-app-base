@@ -8,7 +8,8 @@ const roleAuth = (roles: string[]) => (req: NextApiRequest, res: NextApiResponse
     if (!req.user) {
       res.status(401).json({ error: ERROR_MESSAGES.UNAUTHENTICATED });
     }
-    if (roles.some(r => req.user.roles.includes(r))) {
+
+    if (roles.includes(req.user.role)) {
       next();
     } else {
       res.status(403).json({ error: ERROR_MESSAGES.UNAUTHORIZED });

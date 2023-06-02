@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 
 import { IResponse } from "models/Response";
-import logger from "utils/logger";
+import logger from "services/server/logger";
 
 const onError = (err: Error, req: NextApiRequest, res: NextApiResponse<IResponse>) => {
   logger.error(err);
