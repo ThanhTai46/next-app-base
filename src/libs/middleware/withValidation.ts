@@ -1,32 +1,33 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import * as Yup from "yup";
 import type Lazy from "yup/lib/Lazy";
+import { ValidateOptions } from "yup/lib/types";
 
 import { IResponse } from "models/Response";
 
 type Validation = {
   mode?: "body" | "query" | "param" | "headers";
   schema: any;
+  options?: ValidateOptions
+  overrideSource?: Boolean
 };
 
-function yupResolver<T extends Yup.AnyObjectSchema | Lazy<any>>(schema:T) {
+function yupResolver<T extends Yup.AnyObjectSchema | Lazy<any>>(schema: T) {
   return {
-    validate: (data: unknown) => schema.validateSync(data),
+    validate: (data: unknown, options?: ValidateOptions) => schema.validateSync(data, options),
   };
 }
 
-export default function withValidation({ schema, mode = "query" }: Validation) {
-  return (
-    handler: any
-  ) => {
-    return async (
-      req: NextApiRequest,
-      res: NextApiResponse<IResponse>,
-      next?: any
-    ) => {
+export default function withValidation({ schema, mode = "query", options, overrideSource = false }: Validation) {
+  return (handler: any) => {
+    return async (req: NextApiRequest, res: NextApiResponse<IResponse>, next?: any) => {
       try {
         const resolver = yupResolver(schema);
-        resolver.validate(req[mode]);
+        const validatedObj = resolver.validate(req[mode], options);
+
+        if (overrideSource) {
+          req[mode] = validatedObj;
+        }
 
         if (next) {
           return next();
@@ -38,4 +39,3 @@ export default function withValidation({ schema, mode = "query" }: Validation) {
     };
   };
 }
-
