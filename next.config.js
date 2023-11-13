@@ -30,7 +30,12 @@ module.exports = {
   },
   images: {
     dangerouslyAllowSVG: true,
-    domains: ["vercel.com"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "**",
+      },
+    ]
   },
   webpack: (config, { isServer }) => {
     if (isServer) {
