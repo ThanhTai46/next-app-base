@@ -9,7 +9,7 @@ type Validation = {
   mode?: "body" | "query" | "param" | "headers";
   schema: any;
   options?: ValidateOptions
-  overrideSource?: Boolean
+  overrideOriginal?: Boolean
 };
 
 function yupResolver<T extends Yup.AnyObjectSchema | Lazy<any>>(schema: T) {
@@ -18,14 +18,14 @@ function yupResolver<T extends Yup.AnyObjectSchema | Lazy<any>>(schema: T) {
   };
 }
 
-export default function withValidation({ schema, mode = "query", options, overrideSource = false }: Validation) {
+export default function withValidation({ schema, mode = "query", options, overrideOriginal = false }: Validation) {
   return (handler: any) => {
     return async (req: NextApiRequest, res: NextApiResponse<IResponse>, next?: any) => {
       try {
         const resolver = yupResolver(schema);
         const validatedObj = resolver.validate(req[mode], options);
 
-        if (overrideSource) {
+        if (overrideOriginal) {
           req[mode] = validatedObj;
         }
 
