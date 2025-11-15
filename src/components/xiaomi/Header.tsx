@@ -29,7 +29,7 @@ export default function Header() {
   };
 
   return (
-    <header className="relative">
+    <header className="relative w-full mx-auto">
       {open && (
         <div className="fixed inset-0 z-50 bg-[#1F2023] flex flex-col">
           <div className="flex items-center justify-between px-6 py-6 bg-xiaomi-neutral border-b border-xiaomi-border-primary">
