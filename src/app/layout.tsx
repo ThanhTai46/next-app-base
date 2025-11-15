@@ -13,14 +13,19 @@ export const metadata = {
 
 export default function RootLayout({
   children,
+  blog
 }: {
-  children: React.ReactNode
+  children: React.ReactNode,
+  blog: React.ReactNode
 }) {
   return (
     <html>
       <body>
         <NextAuthProvider>
-          <ReduxProvider>{children}</ReduxProvider>
+          <ReduxProvider>
+            {children}
+            {blog}
+          </ReduxProvider>
         </NextAuthProvider>
       </body>
     </html>
