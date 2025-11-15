@@ -6676,11 +6676,11 @@ rc-virtual-list@^3.5.1, rc-virtual-list@^3.5.2:
     rc-util "^5.36.0"
 
 react-dom@18.2.18:
-  version "19.3.0-canary-fa50caf5-20251107"
-  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-19.3.0-canary-fa50caf5-20251107.tgz#ad2bfc5620cabb02744791e3fe38f48d49376db8"
-  integrity sha512-cTDTtQTbi4Q6xyJxSoY0ofMRfrK+A0P1tp7WjoZ5JBdqy8kJsrZPTx06Ng8NqYiaRMyOKEfzevNx8uDn0JSNCg==
+  version "19.3.0-canary-fb2177c1-20251114"
+  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-19.3.0-canary-fb2177c1-20251114.tgz#3ab7aaf1e23140be8baaa39d254d0be74607206e"
+  integrity sha512-dN0859tXfHNX1luA/vJ+0u8tIYzpvV/wc5Ak4j0VRPOUHR/IekO2dhBhJ2p+i/vPrJ0tCHW6MXH6eVgBqEnfwg==
   dependencies:
-    scheduler "0.28.0-canary-fa50caf5-20251107"
+    scheduler "0.28.0-canary-fb2177c1-20251114"
 
 react-hook-form@7.30.0:
   version "7.30.0"
@@ -6725,9 +6725,9 @@ react-slick@^0.31.0:
     resize-observer-polyfill "^1.5.0"
 
 react@18.2.48:
-  version "19.3.0-canary-fa50caf5-20251107"
-  resolved "https://registry.yarnpkg.com/react/-/react-19.3.0-canary-fa50caf5-20251107.tgz#4cc2e1358b74b61bf74de1c9f707418dc83a6556"
-  integrity sha512-aRSxsZOIKavrOhPWgUiRBJL84tDC3DDSzI3IfTveoW1W+aKLMjmwNoLZKLo1SAmO3b+BUa2MKCoYecGbCS+C/g==
+  version "19.3.0-canary-fb2177c1-20251114"
+  resolved "https://registry.yarnpkg.com/react/-/react-19.3.0-canary-fb2177c1-20251114.tgz#645f216b3599824440a0a348ce3b338ea8611f0e"
+  integrity sha512-f78+dzAbULGnu2JWb6WuRxCxF70LAfNP/oHaF/jG9TQJ4k85W67pS9ItKBcnnPQ4G+euzJ64F9xUIQhkasOKUA==
 
 read-pkg-up@^7.0.1:
   version "7.0.1"
@@ -6982,10 +6982,10 @@ saxes@^5.0.1:
   dependencies:
     xmlchars "^2.2.0"
 
-scheduler@0.28.0-canary-fa50caf5-20251107:
-  version "0.28.0-canary-fa50caf5-20251107"
-  resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.28.0-canary-fa50caf5-20251107.tgz#04521e2e70a756ea3b367f708dcd55f6828820be"
-  integrity sha512-Hb/6JtroaCzPISC+WDjoFWXtNP4W7ZyY0aoGYXcEeO48n6nvJwiaBZooSAT7fltLi0UYfyqN0ECYv41O4F8qtg==
+scheduler@0.28.0-canary-fb2177c1-20251114:
+  version "0.28.0-canary-fb2177c1-20251114"
+  resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.28.0-canary-fb2177c1-20251114.tgz#7e52a184ed9f05a87a18a34bf6f2b082ef0bb18b"
+  integrity sha512-ya7AZh/U0/NBxlPr8+PJAI2W3vb057qQ/Cah6YIbWDUkAPf4Ip/659SrazjuaStjyARPm7TAKW6m84GoagsF1A==
 
 schema-utils@^2.6.5:
   version "2.7.1"

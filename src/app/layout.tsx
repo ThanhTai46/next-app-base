@@ -7,25 +7,16 @@ export const metadata = {
   title: "Next App Starter",
 
   icons: {
-    icon: "/favicon.ico"
+    icon: "/favicon.ico",
   },
 };
 
-export default function RootLayout({
-  children,
-  blog
-}: {
-  children: React.ReactNode,
-  blog: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html>
       <body>
         <NextAuthProvider>
-          <ReduxProvider>
-            {children}
-            {blog}
-          </ReduxProvider>
+          <ReduxProvider>{children}</ReduxProvider>
         </NextAuthProvider>
       </body>
     </html>
